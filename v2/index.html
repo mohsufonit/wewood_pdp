@@ -56,7 +56,8 @@
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-html.locked,html.locked body{overflow:hidden}
+/* lock the page behind sheets on <html> only: overflow on <body> makes it a scroll container and the sticky gallery jumps */
+html.locked{overflow:hidden}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -1321,8 +1322,8 @@ html.locked .wa{opacity:0;pointer-events:none}
 
   /* sheets */
   var last=null;
-  function open(id){var el=document.getElementById(id);last=document.activeElement;el.classList.add('open');document.documentElement.classList.add('locked');el.querySelector('[data-close]').focus()}
-  function close(el){el.classList.remove('open');if(!$('.lbx.open'))document.documentElement.classList.remove('locked');if(last)last.focus()}
+  function open(id){var el=document.getElementById(id);last=document.activeElement;el.classList.add('open');document.documentElement.classList.add('locked');el.querySelector('[data-close]').focus({preventScroll:true})}
+  function close(el){el.classList.remove('open');if(!$('.lbx.open'))document.documentElement.classList.remove('locked');if(last)last.focus({preventScroll:true})}
   $$('.ov').forEach(function(o){o.addEventListener('click',function(e){if(e.target===o||e.target.closest('[data-close]'))close(o)})});
   var rvp=$('#rvPanel'),rvb=$('.rvt');
   function setRv(o){rvp.dataset.open=o;rvb.setAttribute('aria-expanded',o);rvb.querySelector('.go').textContent=o?'Hide':'6 reviews'}
@@ -1350,7 +1351,7 @@ html.locked .wa{opacity:0;pointer-events:none}
   function goL(i,inst){unzoom();i=Math.max(0,Math.min(slides.length-1,i));lt.scrollTo({left:i*lt.clientWidth,behavior:inst?'auto':'smooth'})}
   function onL(){li=Math.round(lt.scrollLeft/lt.clientWidth);$('#lbxCap').textContent=caps[li];$$('button',lth).forEach(function(b,i){b.setAttribute('aria-current',i===li)});$('.lbx-arrow.prev').disabled=li===0;$('.lbx-arrow.next').disabled=li===slides.length-1}
   lt.addEventListener('scroll',function(){requestAnimationFrame(onL)},{passive:true});
-  function openL(i){lastFocus=document.activeElement;lbx.classList.add('open');document.documentElement.classList.add('locked');goL(i,true);onL();$('#lbxX').focus()}
+  function openL(i){lastFocus=document.activeElement;lbx.classList.add('open');document.documentElement.classList.add('locked');goL(i,true);onL();$('#lbxX').focus({preventScroll:true})}
   function closeL(){unzoom();lbx.classList.remove('open');if(!$('.ov.open'))document.documentElement.classList.remove('locked');goG(li,true);if(lastFocus)lastFocus.focus()}
   $$('[data-photo]').forEach(function(b){b.addEventListener('click',function(){openL(slides.indexOf(b.closest('.slide')))})});
   $('#gFull').addEventListener('click',function(){openL(cur)});
@@ -1410,7 +1411,7 @@ html.locked .wa{opacity:0;pointer-events:none}
   function cardData(c){var im=c.querySelector('img'),st=c.querySelector('.step');return{src:im.src,alt:im.alt,tag:st?st.textContent:'',h:c.querySelector('figcaption b').textContent,p:c.querySelector('figcaption span').textContent}}
   function showC(i){ci=(i+clbSet.length)%clbSet.length;var d=clbSet[ci];$('#clbImg').src=d.src;$('#clbImg').alt=d.alt;$('#clbTag').textContent=d.tag;$('#clbH').textContent=d.h;$('#clbP').textContent=d.p;$('#clbN').textContent=(ci+1)+' / '+clbSet.length;$$('#clbThumbs button').forEach(function(b,j){b.setAttribute('aria-current',j===ci)})}
   function openC(cards,i){clbSet=cards.map(cardData);var th=$('#clbThumbs');th.innerHTML='';clbSet.forEach(function(d,j){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show '+d.h);b.innerHTML='<img src="'+d.src+'" alt="">';b.addEventListener('click',function(){showC(j)});th.appendChild(b)});
-    clbFocus=document.activeElement;showC(i);clb.classList.add('open');document.documentElement.classList.add('locked');$('#clbX').focus()}
+    clbFocus=document.activeElement;showC(i);clb.classList.add('open');document.documentElement.classList.add('locked');$('#clbX').focus({preventScroll:true})}
   function closeC(){clb.classList.remove('open');if(!$('.ov.open')&&!lbx.classList.contains('open'))document.documentElement.classList.remove('locked');if(clbFocus)clbFocus.focus()}
   $('#clbX').addEventListener('click',closeC);
   clb.addEventListener('click',function(e){if(e.target===clb||e.target===$('#clbStage'))closeC()});
