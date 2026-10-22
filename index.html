@@ -267,15 +267,16 @@ summary::-webkit-details-marker{display:none}
 .size{margin-top:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
 .size-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .size-h b{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
-.szt{width:100%;margin-top:8px;border-collapse:collapse;table-layout:fixed}
-.szt thead th{padding:6px 0;text-align:left;font-family:var(--font-ui);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.szt{width:100%;margin-top:0;border-collapse:collapse;table-layout:fixed}
+.szt thead th{padding:2px 0 8px;text-align:left;font-family:var(--font-ui);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
 .szt thead th:first-child{width:40%}
 .szt tbody th,.szt tbody td{padding:9px 0;border-top:1px solid var(--line);text-align:left;vertical-align:middle}
 .szt tbody th{font-weight:600;font-size:13.5px;color:var(--text-2)}
 .szt .pc{display:flex;align-items:center;gap:10px}
 .szt .pc svg{width:auto;color:#8a5a3b;flex:none}
 .szt b{font-size:16px;font-weight:800;color:var(--dark);white-space:nowrap}
-.fit-link{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-family:var(--font-ui);font-size:13px}
+.size-f{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px}
+.fit-link{display:inline-flex;align-items:center;gap:6px;margin-top:0;font-family:var(--font-ui);font-size:13px}
 .fit-link svg{width:15px;height:15px}
 
 /* offers panel */
@@ -818,15 +819,17 @@ html.locked .wa{opacity:0;pointer-events:none}
     </div>
 
     <div class="size" id="sizeBox">
-      <div class="size-h"><b>Size</b><div class="unit" role="group" aria-label="Units"><button type="button" data-u="in" aria-pressed="true">inch</button><button type="button" data-u="cm" aria-pressed="false">cm</button></div></div>
       <table class="szt">
-        <thead><tr><th scope="col"><span class="vh">Table</span></th><th scope="col">Top width</th><th scope="col">Height</th></tr></thead>
+        <thead><tr><th scope="col">Size</th><th scope="col">Top width</th><th scope="col">Height</th></tr></thead>
         <tbody>
           <tr><th scope="row"><span class="pc"><svg viewBox="0 0 30 40" height="26" aria-hidden="true"><rect x="1" y="1" width="28" height="3.5" rx="1.75" fill="currentColor"/><path d="M5 4l-2 35M25 4l2 35" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Large table</span></th><td><b data-cm="35.5 cm">14 in</b></td><td><b data-cm="48 cm">19 in</b></td></tr>
           <tr><th scope="row"><span class="pc"><svg viewBox="0 0 26 35" height="22" aria-hidden="true"><rect x="1" y="1" width="24" height="3.5" rx="1.75" fill="currentColor"/><path d="M5 4l-2 30M21 4l2 30" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Small table</span></th><td><b data-cm="30.5 cm">12 in</b></td><td><b data-cm="42 cm">16.5 in</b></td></tr>
         </tbody>
       </table>
-      <button type="button" class="fit-link ul" data-sheet="sSize"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l14-14 4 4L7 21H3z"/><path d="M14 6l1.5 1.5M11 9l1.5 1.5M8 12l1.5 1.5"/></svg>Will it fit? See it beside a sofa</button>
+      <div class="size-f">
+        <button type="button" class="fit-link ul" data-sheet="sSize"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l14-14 4 4L7 21H3z"/><path d="M14 6l1.5 1.5M11 9l1.5 1.5M8 12l1.5 1.5"/></svg>Will it fit? See it beside a sofa</button>
+        <div class="unit" role="group" aria-label="Units"><button type="button" data-u="in" aria-pressed="true">inch</button><button type="button" data-u="cm" aria-pressed="false">cm</button></div>
+      </div>
     </div>
 
     <div class="offers" id="offers" data-open="false">
