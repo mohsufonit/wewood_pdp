@@ -868,7 +868,7 @@ html.locked .wa{opacity:0;pointer-events:none}
           <label class="vh" for="qty">Quantity</label><input id="qty" name="quantity" type="number" value="1" min="1" inputmode="numeric">
           <button type="button" data-qty="1" aria-label="Increase quantity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
         </div>
-        <button type="submit" class="btn btn--primary" id="mainCta">Add to cart - <span id="ctaPrice">₹13,999</span></button>
+        <button type="submit" class="btn btn--primary" id="mainCta">Add to cart</button>
       </div>
     </form>
     <a class="buy-now" id="buyNow" href="https://wewood.co.in/cart/49856427491647:1">or <span class="ul">buy it now</span>, straight to checkout</a>
@@ -1262,7 +1262,7 @@ html.locked .wa{opacity:0;pointer-events:none}
 
   /* qty -> CTA price + buy-now link */
   var qty=$('#qty');
-  function sync(){var n=Math.max(1,parseInt(qty.value,10)||1);qty.value=n;$('#buyNow').href='https://wewood.co.in/cart/49856427491647:'+n;$('#ctaPrice').textContent=fmt(13999*n)}
+  function sync(){var n=Math.max(1,parseInt(qty.value,10)||1);qty.value=n;$('#buyNow').href='https://wewood.co.in/cart/49856427491647:'+n}
   $$('[data-qty]').forEach(function(b){b.addEventListener('click',function(){qty.value=(parseInt(qty.value,10)||1)+(+b.dataset.qty);sync()})});
   qty.addEventListener('change',sync);
   $$('form[action$="/cart/add"]').forEach(function(f){f.addEventListener('submit',function(){toast('Adding to your WeWood cart in a new tab')})});
@@ -1443,7 +1443,7 @@ html.locked .wa{opacity:0;pointer-events:none}
 
   /* floating buy: whenever the main button is off screen, once past the gallery */
   var fb=$('#fbuy'),ctaIn=true;
-  function fbu(){var on=!ctaIn&&scrollY>innerHeight*.55;if(on&&!fb.classList.contains('on'))requestAnimationFrame(fitAll);fb.classList.toggle('on',on);fb.setAttribute('aria-hidden',!on)}
+  function fbu(){var on=!ctaIn&&scrollY>160;if(on&&!fb.classList.contains('on'))requestAnimationFrame(fitAll);fb.classList.toggle('on',on);fb.setAttribute('aria-hidden',!on)}
   if('IntersectionObserver' in window){new IntersectionObserver(function(es){ctaIn=es[0].isIntersecting;fbu()}).observe($('#mainCta'))}
   addEventListener('scroll',fbu,{passive:true});
 })();
