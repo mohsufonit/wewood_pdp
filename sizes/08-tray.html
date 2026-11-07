@@ -14,7 +14,7 @@ a{color:inherit}
 .rule{margin:8px 0 0;max-width:70ch;color:var(--text-2)}
 .prod{margin:4px 0 0;font-size:13px;color:var(--text-3)}
 .nav{display:flex;gap:8px;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:600}
-.nav a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-decoration:none}
+.nav a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-decoration:none}.nav a.inpdp{background:var(--dark);color:#fff;border-color:var(--dark)}
 .grid{display:grid;grid-template-columns:380px 380px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
 .col h2{font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin:0 0 10px}
 .phone{background:var(--bg);border:1px solid var(--border);border-radius:28px;padding:18px 16px}
@@ -51,7 +51,7 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){.fit .pc{transition:none}}
 .facts{list-style:none;margin:12px 0 0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .facts li{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;font-size:13px;border-top:1px solid var(--line)}
-.facts li:first-child{border-top:0}.facts span{color:var(--text-3)}.facts b{color:var(--dark);text-align:right}
+.facts li:first-child{border-top:0}.facts li>span{color:var(--text-3)}.facts b{color:var(--dark);text-align:right}
 .tips{margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--text-2)}.tips li{margin-bottom:4px}
 .notes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
 .notes h3{font-size:18px;margin:0 0 8px}.notes ul{margin:0 0 14px;padding-left:18px}.notes li{margin-bottom:6px;font-size:14px}
@@ -64,16 +64,23 @@ a{color:inherit}
 .dev th{font-weight:600;color:var(--text-3);font-size:11.5px}.dev code{font-family:Consolas,monospace;font-size:12.5px;color:var(--dark)}
 .dev h3{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700;margin:0 0 6px;color:var(--dark)}
 @media (max-width:1100px){.grid{grid-template-columns:1fr}.dev .cols{grid-template-columns:1fr}}
-</style></head><body><div class="wrap">
+.howm{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.howm summary{list-style:none;cursor:pointer;padding:11px 14px;font:700 13px Inter,Arial,sans-serif;color:var(--dark);display:flex;justify-content:space-between;align-items:center}
+.howm summary::-webkit-details-marker{display:none}.howm summary::after{content:"+";font-weight:500;font-size:18px;line-height:1;color:var(--text-3)}.howm[open] summary::after{content:"\2212"}
+.howm-b{padding:0 14px 14px}.howm svg{display:block;width:100%;max-width:300px;height:auto;margin:0 auto 6px}
+.howm .gl{font:700 10.5px Inter,Arial,sans-serif;fill:#161e13}
+.howm dl{margin:0;display:grid;gap:6px}.howm dl div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;font-size:13px;line-height:1.45}
+.howm dt{font-weight:700;color:var(--dark)}.howm dd{margin:0;color:var(--text-2)}
+.howm .home{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:13px;line-height:1.45;color:var(--text-2)}.howm .home b{color:var(--dark)}</style></head><body><div class="wrap">
 <div class="top"><div><span class="eyebrow">Size variation 8 of 12 · Tabletop pieces</span><h1>Tray or board</h1><p class="rule">Trays, boards and platters. Drawn from above, beside an A4 sheet everyone has seen. 27 single tabletop pieces live.</p><p class="prod">Example: Glass Handle Tray – Acacia Wood &amp; Clear Resin (13" x 10") · ₹2,999</p></div>
-<nav class="nav"><a href="index.html">All variations</a><a href="07-dining-height-in-cm.html">← Dining-height table, listed in cm</a><a href="09-round-platter.html">Round platter or lazy susan →</a></nav></div>
+<nav class="nav"><a class="inpdp" href="https://mohsufonit.github.io/wewood_pdp/v2/?size=08-tray">See it in the product page ↗</a><a href="index.html">All variations</a><a href="07-dining-height-in-cm.html">← Dining-height table, listed in cm</a><a href="09-round-platter.html">Round platter or lazy susan →</a></nav></div>
 <div class="grid">
 <div class="col"><h2>In the buy box</h2><div class="phone"><div class="pname">Glass Handle Tray</div><div class="price">₹2,999</div><div class="size"><div class="strip" style="--n:2"><div><span class="k">Size</span><b><span data-in="13 × 10 in" data-cm="33 × 25.5 cm">13 × 10 in</span></b></div><div><span class="k">Thickness</span><b><span data-in="15 mm" data-cm="15 mm">15 mm</span></b></div></div><div class="size-f"><button type="button" class="fit-link" data-open-fit>How big is it? See it beside an A4 sheet</button><div class="unit" role="group" aria-label="Units"><button type="button" data-u="in" aria-pressed="true">inch</button><button type="button" data-u="cm" aria-pressed="false">cm</button></div></div></div></div></div>
 <div class="col"><h2>"How big is it?" pop-up</h2><div class="sheet"><div class="sh-h"><h3>How big is it?</h3></div>
     <p class="sub">Seen from above, drawn to scale.</p>
     <div class="fit"><svg viewBox="0 0 460 300" role="img" aria-label="Seen from above, to scale beside a4 sheet"><rect x="30.0" y="34.0" width="214.3" height="164.8" rx="10.0" fill="#8a5a3b"/><rect x="120.0" y="34.0" width="42.9" height="164.8" fill="#9fc9cf" opacity=".9"/><g stroke="#161e13"><line x1="30.0" y1="208.8" x2="244.3" y2="208.8"/></g><text class="lb" x="137.1" y="222.8" text-anchor="middle" data-in="13 in" data-cm="33 cm">13 in</text><g stroke="#161e13"><line x1="20.0" y1="34.0" x2="20.0" y2="198.8"/></g><text class="lb" transform="translate(16.0 116.4) rotate(-90)" text-anchor="middle" data-in="10 in" data-cm="25.5 cm">10 in</text><rect x="293.7" y="34.0" width="136.3" height="192.7" fill="#efeee8" stroke="#c4c4c4" stroke-dasharray="4 3"/><text class="sm" x="361.9" y="126.3" text-anchor="middle">A4 sheet</text><text class="sm" x="361.9" y="141.3" text-anchor="middle" data-in="8.3 × 11.7 in" data-cm="21 × 29.7 cm">8.3 × 11.7 in</text><text class="sm" x="452.0" y="20.0" text-anchor="end">Seen from above</text></svg></div>
     <ul class="facts"><li><span>Tray</span><b><span data-in="13 × 10 in" data-cm="33 × 25.5 cm">13 × 10 in</span> · <span data-in="15 mm" data-cm="15 mm">15 mm</span> thick</b></li></ul>
-    <ul class="tips"><li>A little longer and wider than an A4 sheet: room for 4 cups and a plate of snacks.</li></ul></div></div>
+    <ul class="tips"><li>A little longer and wider than an A4 sheet: room for 4 cups and a plate of snacks.</li></ul><details class="howm"><summary>How we measure</summary><div class="howm-b"><svg viewBox="0 0 260 128" aria-hidden="true"><rect x="50" y="30" width="120" height="80" rx="8" fill="#c9a27c"/><rect x="85" y="55" width="50" height="30" rx="4" fill="#9fc9cf"/><g stroke="#161e13" stroke-width="1.2"><line x1="50" y1="16" x2="170" y2="16"/><path d="M56 12L50 16L56 20M164 12L170 16L164 20" fill="none"/></g><text class="gl" x="110" y="10" text-anchor="middle">Length</text><g stroke="#161e13" stroke-width="1.2"><line x1="186" y1="30" x2="186" y2="110"/><path d="M182 36L186 30L190 36M182 104L186 110L190 104" fill="none"/></g><text class="gl" x="194" y="74" text-anchor="start">Width</text><rect x="208" y="112" width="44" height="6" rx="2" fill="#c9a27c" opacity=".9"/><text class="gl" x="230" y="106" text-anchor="middle">Thickness</text></svg><dl><div><dt>Length × width</dt><dd>The two sides of the top, measured at the widest points. Handles count if they stick out.</dd></div><div><dt>Thickness</dt><dd>How tall it stands on the table, in mm.</dd></div></dl><p class="home"><b>At home:</b> Measure the shelf, counter or table where it will sit.</p></div></details></div></div>
 <div class="col"><h2>What changes</h2><div class="notes"><ul><li>Two measurements: Size and Thickness. No height.</li><li>Drawing: top view beside an A4 sheet instead of a side view beside a sofa.</li></ul><p class="src">Measurements from the live listing. Listing: 13" × 10", 15mm thick.</p></div></div>
 </div><section class="dev"><h2>For the developer</h2><p>These are the only values a product needs for this variation. The template works out everything in the right-hand table from them. Nothing on this page is designed per product.</p>
 <div class="cols"><div><h3>Product metafields</h3><table><tbody><tr><td><code>custom.size_type</code></td><td><code>tabletop</code></td></tr><tr><td><code>custom.size_nests</code></td><td><code>false</code></td></tr><tr><td><code>custom.size_unit</code></td><td><code>in</code></td></tr></tbody></table>

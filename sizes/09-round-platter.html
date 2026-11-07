@@ -14,7 +14,7 @@ a{color:inherit}
 .rule{margin:8px 0 0;max-width:70ch;color:var(--text-2)}
 .prod{margin:4px 0 0;font-size:13px;color:var(--text-3)}
 .nav{display:flex;gap:8px;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:600}
-.nav a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-decoration:none}
+.nav a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-decoration:none}.nav a.inpdp{background:var(--dark);color:#fff;border-color:var(--dark)}
 .grid{display:grid;grid-template-columns:380px 380px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
 .col h2{font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin:0 0 10px}
 .phone{background:var(--bg);border:1px solid var(--border);border-radius:28px;padding:18px 16px}
@@ -51,7 +51,7 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){.fit .pc{transition:none}}
 .facts{list-style:none;margin:12px 0 0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .facts li{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;font-size:13px;border-top:1px solid var(--line)}
-.facts li:first-child{border-top:0}.facts span{color:var(--text-3)}.facts b{color:var(--dark);text-align:right}
+.facts li:first-child{border-top:0}.facts li>span{color:var(--text-3)}.facts b{color:var(--dark);text-align:right}
 .tips{margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--text-2)}.tips li{margin-bottom:4px}
 .notes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
 .notes h3{font-size:18px;margin:0 0 8px}.notes ul{margin:0 0 14px;padding-left:18px}.notes li{margin-bottom:6px;font-size:14px}
@@ -64,16 +64,23 @@ a{color:inherit}
 .dev th{font-weight:600;color:var(--text-3);font-size:11.5px}.dev code{font-family:Consolas,monospace;font-size:12.5px;color:var(--dark)}
 .dev h3{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700;margin:0 0 6px;color:var(--dark)}
 @media (max-width:1100px){.grid{grid-template-columns:1fr}.dev .cols{grid-template-columns:1fr}}
-</style></head><body><div class="wrap">
+.howm{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.howm summary{list-style:none;cursor:pointer;padding:11px 14px;font:700 13px Inter,Arial,sans-serif;color:var(--dark);display:flex;justify-content:space-between;align-items:center}
+.howm summary::-webkit-details-marker{display:none}.howm summary::after{content:"+";font-weight:500;font-size:18px;line-height:1;color:var(--text-3)}.howm[open] summary::after{content:"\2212"}
+.howm-b{padding:0 14px 14px}.howm svg{display:block;width:100%;max-width:300px;height:auto;margin:0 auto 6px}
+.howm .gl{font:700 10.5px Inter,Arial,sans-serif;fill:#161e13}
+.howm dl{margin:0;display:grid;gap:6px}.howm dl div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;font-size:13px;line-height:1.45}
+.howm dt{font-weight:700;color:var(--dark)}.howm dd{margin:0;color:var(--text-2)}
+.howm .home{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:13px;line-height:1.45;color:var(--text-2)}.howm .home b{color:var(--dark)}</style></head><body><div class="wrap">
 <div class="top"><div><span class="eyebrow">Size variation 9 of 12 · Tabletop pieces</span><h1>Round platter or lazy susan</h1><p class="rule">Round tabletop pieces. Compared with a dinner plate.</p><p class="prod">Example: Stone Spin – Acacia Wood &amp; Grey Resin Lazy Susan, Matt (18" Dia) · ₹6,400</p></div>
-<nav class="nav"><a href="index.html">All variations</a><a href="08-tray.html">← Tray or board</a><a href="10-platter-set.html">Platter set →</a></nav></div>
+<nav class="nav"><a class="inpdp" href="https://mohsufonit.github.io/wewood_pdp/v2/?size=09-round-platter">See it in the product page ↗</a><a href="index.html">All variations</a><a href="08-tray.html">← Tray or board</a><a href="10-platter-set.html">Platter set →</a></nav></div>
 <div class="grid">
 <div class="col"><h2>In the buy box</h2><div class="phone"><div class="pname">Stone Spin</div><div class="price">₹6,400</div><div class="size"><div class="strip" style="--n:2"><div><span class="k">Top</span><b><span data-in="18 in across" data-cm="45.5 cm across">18 in across</span></b></div><div><span class="k">Thickness</span><b><span data-in="20 mm" data-cm="20 mm">20 mm</span></b></div></div><div class="size-f"><button type="button" class="fit-link" data-open-fit>How big is it? See it beside a dinner plate</button><div class="unit" role="group" aria-label="Units"><button type="button" data-u="in" aria-pressed="true">inch</button><button type="button" data-u="cm" aria-pressed="false">cm</button></div></div></div></div></div>
 <div class="col"><h2>"How big is it?" pop-up</h2><div class="sheet"><div class="sh-h"><h3>How big is it?</h3></div>
     <p class="sub">Seen from above, drawn to scale.</p>
     <div class="fit"><svg viewBox="0 0 460 300" role="img" aria-label="Seen from above, to scale beside dinner plate"><circle cx="140.0" cy="144.0" r="110.0" fill="#8a5a3b"/><path d="M74.0 199.0 C 129.0 122.0, 151.0 188.0, 210.4 100.0" stroke="#8a9196" stroke-width="28.6" fill="none" stroke-linecap="round"/><g stroke="#161e13"><line x1="30.0" y1="264.0" x2="250.0" y2="264.0"/></g><text class="lb" x="140.0" y="278.0" text-anchor="middle" data-in="18 in across" data-cm="45.5 cm across">18 in across</text><circle cx="350.8" cy="98.2" r="64.2" fill="#efeee8" stroke="#c4c4c4" stroke-dasharray="4 3"/><text class="sm" x="350.8" y="94.2" text-anchor="middle">Dinner plate</text><text class="sm" x="350.8" y="109.2" text-anchor="middle" data-in="10.5 in" data-cm="27 cm">10.5 in</text><text class="sm" x="452.0" y="20.0" text-anchor="end">Seen from above</text></svg></div>
     <ul class="facts"><li><span>Lazy susan</span><b><span data-in="18 in across" data-cm="45.5 cm across">18 in across</span> · <span data-in="20 mm" data-cm="20 mm">20 mm</span> thick</b></li></ul>
-    <ul class="tips"><li>About as wide as two dinner plates side by side.</li></ul></div></div>
+    <ul class="tips"><li>About as wide as two dinner plates side by side.</li></ul><details class="howm"><summary>How we measure</summary><div class="howm-b"><svg viewBox="0 0 260 128" aria-hidden="true"><circle cx="110" cy="74" r="42" fill="#c9a27c"/><circle cx="110" cy="74" r="15" fill="#8a9196"/><g stroke="#161e13" stroke-width="1.2"><line x1="68" y1="22" x2="152" y2="22"/><path d="M74 18L68 22L74 26M146 18L152 22L146 26" fill="none"/></g><text class="gl" x="110" y="14" text-anchor="middle">Across</text><rect x="208" y="100" width="44" height="6" rx="2" fill="#c9a27c" opacity=".9"/><text class="gl" x="230" y="94" text-anchor="middle">Thickness</text></svg><dl><div><dt>Across</dt><dd>Edge to edge through the middle.</dd></div><div><dt>Thickness</dt><dd>How tall it stands on the table, in mm.</dd></div></dl><p class="home"><b>At home:</b> Measure the table or counter where it will sit, or compare with one of your own plates.</p></div></details></div></div>
 <div class="col"><h2>What changes</h2><div class="notes"><ul><li>"18 in across".</li><li>Drawing: top view beside a typical 10.5 in dinner plate.</li></ul><p class="src">Measurements from the live listing. Listing: 18" diameter, 20mm thick.</p></div></div>
 </div><section class="dev"><h2>For the developer</h2><p>These are the only values a product needs for this variation. The template works out everything in the right-hand table from them. Nothing on this page is designed per product.</p>
 <div class="cols"><div><h3>Product metafields</h3><table><tbody><tr><td><code>custom.size_type</code></td><td><code>tabletop</code></td></tr><tr><td><code>custom.size_nests</code></td><td><code>false</code></td></tr><tr><td><code>custom.size_unit</code></td><td><code>in</code></td></tr></tbody></table>
