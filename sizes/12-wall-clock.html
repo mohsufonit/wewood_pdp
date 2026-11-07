@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wall clock - WeWood size block</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Urbanist:wght@500;600&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f2ee;--surface:#fff;--soft:#f7f6f1;--dark:#161e13;--text:#2b2b2b;--text-2:#525252;--text-3:#8c8c87;--line:#e7e6e0;--border:#d9d8d1;--yellow:#f9d35c;--amber:#a87b00;--resin:#2bb3a0;--radius:16px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Urbanist,Arial,sans-serif;font-weight:500;color:var(--dark);margin:0;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 24px 48px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.eyebrow{font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.top h1{font-size:32px;margin-top:6px}
+.rule{margin:8px 0 0;max-width:70ch;color:var(--text-2)}
+.prod{margin:4px 0 0;font-size:13px;color:var(--text-3)}
+.nav{display:flex;gap:8px;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:600}
+.nav a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-decoration:none}
+.grid{display:grid;grid-template-columns:380px 380px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+.col h2{font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin:0 0 10px}
+.phone{background:var(--bg);border:1px solid var(--border);border-radius:28px;padding:18px 16px}
+.price{font-weight:800;font-size:28px;color:#7a4a22;margin:2px 0 12px}
+.pname{font-family:Urbanist,Arial,sans-serif;font-size:20px;color:var(--dark);line-height:1.15}
+.size{padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.szt{width:100%;border-collapse:collapse;table-layout:fixed}
+.szt thead th{padding:2px 0 8px;text-align:left;font-family:Inter,Arial,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.szt thead th:first-child{width:38%}
+.szt tbody th,.szt tbody td{padding:9px 0;border-top:1px solid var(--line);text-align:left;vertical-align:middle}
+.szt tbody th{font-weight:600;font-size:13.5px;color:var(--text-2)}
+.szt .pc{display:flex;align-items:center;gap:8px}.szt .pc svg{color:#8a5a3b;flex:none}
+.szt b,.strip b{font-size:15.5px;font-weight:800;color:var(--dark);white-space:nowrap}
+.each{margin:0 0 8px;font-size:13.5px;color:var(--text-2)}.each b{color:var(--dark)}
+.strip{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.strip div{padding:10px 10px;display:flex;flex-direction:column;gap:2px}
+.strip div+div{border-left:1px solid var(--line)}
+.strip .k{font-family:Inter,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.size-f{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.fit-link{border:0;background:none;padding:0;font:700 12.5px Inter,Arial,sans-serif;color:var(--dark);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer;text-align:left}
+.unit{display:inline-flex;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:2px;flex:none}
+.unit button{border:0;background:none;min-width:40px;height:26px;padding:0 9px;border-radius:999px;font:700 11.5px Inter,Arial,sans-serif;color:var(--text-2);cursor:pointer}
+.unit button[aria-pressed="true"]{background:var(--dark);color:#fff}
+.sheet{background:var(--surface);border-radius:20px;padding:20px 16px 18px;border:1px solid var(--line)}
+.sh-h{display:flex;justify-content:space-between;align-items:center;gap:10px}.sh-h h3{font-size:22px}
+.replay{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 10px;font:700 11.5px Inter,Arial,sans-serif;cursor:pointer}
+.sheet .sub{margin:4px 0 12px;font-size:13px;color:var(--text-2)}
+.fit{background:var(--soft);border-radius:12px;padding:10px 6px}
+.fit svg{display:block;width:100%;height:auto}
+.fit .lb{font:700 12px Inter,Arial,sans-serif;fill:#161e13}.fit .sm{font:500 10.5px Inter,Arial,sans-serif;fill:#525252}.fit .tg{font:700 10px Inter,Arial,sans-serif;fill:#fff}
+.fit .pc{transition:transform 1.1s cubic-bezier(.23,1,.32,1)}
+.fit.nest.nested .pc{transform:translateX(var(--dx))}
+.fit.nest .pc .tag{transition:opacity .4s}.fit.nest.nested .pc .tag{opacity:0}
+@media (prefers-reduced-motion:reduce){.fit .pc{transition:none}}
+.facts{list-style:none;margin:12px 0 0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.facts li{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;font-size:13px;border-top:1px solid var(--line)}
+.facts li:first-child{border-top:0}.facts span{color:var(--text-3)}.facts b{color:var(--dark);text-align:right}
+.tips{margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--text-2)}.tips li{margin-bottom:4px}
+.notes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.notes h3{font-size:18px;margin:0 0 8px}.notes ul{margin:0 0 14px;padding-left:18px}.notes li{margin-bottom:6px;font-size:14px}
+.src{font-size:12.5px;color:var(--text-3);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
+.dev{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.dev h2{font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin:0 0 4px}
+.dev p{margin:0 0 12px;font-size:13.5px;color:var(--text-2)}
+.dev .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dev table{width:100%;border-collapse:collapse;font-size:13px}.dev td,.dev th{text-align:left;padding:7px 8px;border-top:1px solid var(--line);vertical-align:top}
+.dev th{font-weight:600;color:var(--text-3);font-size:11.5px}.dev code{font-family:Consolas,monospace;font-size:12.5px;color:var(--dark)}
+.dev h3{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700;margin:0 0 6px;color:var(--dark)}
+@media (max-width:1100px){.grid{grid-template-columns:1fr}.dev .cols{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<div class="top"><div><span class="eyebrow">Size variation 12 of 12 · Wall pieces</span><h1>Wall clock</h1><p class="rule">Clocks and wall art. Drawn from the front, on a wall above a sofa. 11 live products, listed in cm.</p><p class="prod">Example: Azur Resin Wall Clock – Elegant Fusion of Acacia Wood &amp; Resin-White · ₹5,999</p></div>
+<nav class="nav"><a href="index.html">All variations</a><a href="11-coasters.html">← Small identical pieces</a></nav></div>
+<div class="grid">
+<div class="col"><h2>In the buy box</h2><div class="phone"><div class="pname">Azur Resin Wall Clock</div><div class="price">₹5,999</div><div class="size"><div class="strip" style="--n:2"><div><span class="k">Diameter</span><b><span data-in="21.5 in" data-cm="55 cm">21.5 in</span></b></div><div><span class="k">Thickness</span><b><span data-in="20 mm" data-cm="20 mm">20 mm</span></b></div></div><div class="size-f"><button type="button" class="fit-link" data-open-fit>How big is it? See it on a wall above a sofa</button><div class="unit" role="group" aria-label="Units"><button type="button" data-u="in" aria-pressed="true">inch</button><button type="button" data-u="cm" aria-pressed="false">cm</button></div></div></div></div></div>
+<div class="col"><h2>"How big is it?" pop-up</h2><div class="sheet"><div class="sh-h"><h3>How big is it?</h3></div>
+    <p class="sub">On a wall, drawn to scale.</p>
+    <div class="fit"><svg viewBox="0 0 460 300" role="img" aria-label="On a wall above a typical 3-seater sofa, to scale"><rect x="0" y="0" width="460" height="270" fill="#f6f4ee"/><line x1="0" y1="270" x2="460" y2="270" stroke="#cdcdcd" stroke-width="1.5"/><line x1="38" y1="270" x2="38" y2="33.2" stroke="#9d9d9d"/><line x1="34" y1="226.8" x2="42" y2="226.8" stroke="#9d9d9d"/><text class="sm" x="31" y="230.3" text-anchor="end" data-in="1 ft" data-cm="30">1 ft</text><line x1="34" y1="183.5" x2="42" y2="183.5" stroke="#9d9d9d"/><text class="sm" x="31" y="187.0" text-anchor="end" data-in="2 ft" data-cm="61">2 ft</text><line x1="34" y1="140.3" x2="42" y2="140.3" stroke="#9d9d9d"/><text class="sm" x="31" y="143.8" text-anchor="end" data-in="3 ft" data-cm="91">3 ft</text><line x1="34" y1="97.0" x2="42" y2="97.0" stroke="#9d9d9d"/><text class="sm" x="31" y="100.5" text-anchor="end" data-in="4 ft" data-cm="122">4 ft</text><line x1="34" y1="53.8" x2="42" y2="53.8" stroke="#9d9d9d"/><text class="sm" x="31" y="57.3" text-anchor="end" data-in="5 ft" data-cm="152">5 ft</text><text class="sm" x="31" y="273.5" text-anchor="end">0</text><rect x="58.0" y="154.7" width="281.1" height="54.1" rx="6" fill="#efeee8" stroke="#c4c4c4" stroke-dasharray="4 3"/><rect x="58.0" y="208.7" width="281.1" height="61.3" rx="6" fill="#efeee8" stroke="#c4c4c4" stroke-dasharray="4 3"/><rect x="58.0" y="179.9" width="21.6" height="90.1" rx="6" fill="#efeee8" stroke="#c4c4c4" stroke-dasharray="4 3"/><rect x="317.5" y="179.9" width="21.6" height="90.1" rx="6" fill="#efeee8" stroke="#c4c4c4" stroke-dasharray="4 3"/><text class="sm" x="198.6" y="244.8" text-anchor="middle">Typical 3-seater sofa</text><text class="sm" x="198.6" y="258.8" text-anchor="middle" data-in="78 in wide" data-cm="198 cm wide">78 in wide</text><circle cx="198.6" cy="79.5" r="39.1" fill="#8a5a3b"/><path d="M171.2 95.2 C 190.7 67.8, 206.4 99.1, 227.9 65.8" stroke="#d9d4c8" stroke-width="12.5" fill="none" stroke-linecap="round"/><line x1="198.6" y1="79.5" x2="198.6" y2="58.0" stroke="#161e13" stroke-width="2.5" stroke-linecap="round"/><line x1="198.6" y1="79.5" x2="214.2" y2="83.4" stroke="#161e13" stroke-width="2.5" stroke-linecap="round"/><g stroke="#161e13"><line x1="159.5" y1="31.4" x2="237.7" y2="31.4"/></g><text class="lb" x="198.6" y="26.4" text-anchor="middle" data-in="21.5 in across" data-cm="55 cm across">21.5 in across</text></svg></div>
+    <ul class="facts"><li><span>Clock</span><b><span data-in="21.5 in across" data-cm="55 cm across">21.5 in across</span> · <span data-in="20 mm" data-cm="20 mm">20 mm</span> thick</b></li></ul>
+    <ul class="tips"><li>Hung about 10 in above a typical 3-seater sofa, it fills roughly a third of the sofa's width.</li></ul></div></div>
+<div class="col"><h2>What changes</h2><div class="notes"><ul><li>Two measurements: Diameter and Thickness. Inches by default like every product; the cm switch shows the listing's exact 55 cm.</li><li>Drawing: front view on a wall above a 3-seater sofa.</li></ul><p class="src">Measurements from the live listing. Listing: 55 cm diameter (21 inches), 20mm thick.</p></div></div>
+</div><section class="dev"><h2>For the developer</h2><p>These are the only values a product needs for this variation. The template works out everything in the right-hand table from them. Nothing on this page is designed per product.</p>
+<div class="cols"><div><h3>Product metafields</h3><table><tbody><tr><td><code>custom.size_type</code></td><td><code>wall</code></td></tr><tr><td><code>custom.size_nests</code></td><td><code>false</code></td></tr><tr><td><code>custom.size_unit</code></td><td><code>cm</code></td></tr></tbody></table>
+<h3 style="margin-top:14px"><code>custom.size_pieces</code> (list of "Size piece" entries, numbers in cm)</h3>
+<table><thead><tr><th>label</th><th>shape</th><th>width</th><th>depth</th><th>height</th><th>thickness_mm</th><th>quantity</th></tr></thead><tbody><tr><td>Clock</td><td>round</td><td>55</td><td><i>empty</i></td><td><i>empty</i></td><td>20</td><td>1</td></tr></tbody></table></div>
+<div><h3>Derived by the template</h3><table><tbody><tr><th>Size block layout</th><td>One row of measurements, no table (1 piece entry, quantity 1)</td></tr><tr><th>Drawing view</th><td>Front, on a wall (from size_type = wall)</td></tr><tr><th>Drawn beside</th><td>Wall above a 3-seater sofa</td></tr><tr><th>Animation</th><td>None (size_nests = false)</td></tr><tr><th>Link text</th><td>How big is it? See it on a wall above a sofa</td></tr><tr><th>Hidden</th><td>Nothing</td></tr></tbody></table></div></div></section></div><script>
+(function(){
+  var q=function(s){return [].slice.call(document.querySelectorAll(s))};
+  q('[data-in]').forEach(function(e){e.dataset.inText=e.textContent});
+  function units(u){q('[data-cm]').forEach(function(e){e.textContent=u==='cm'?e.dataset.cm:e.dataset.in});q('.unit button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.u===u)})}
+  q('.unit button').forEach(function(b){b.addEventListener('click',function(){units(b.dataset.u)})});
+  var fit=document.querySelector('.fit.nest');
+  function play(){if(!fit)return;fit.classList.remove('nested');void fit.getBoundingClientRect();setTimeout(function(){fit.classList.add('nested')},700)}
+  q('[data-replay]').forEach(function(b){b.addEventListener('click',play)});
+  q('[data-open-fit]').forEach(function(b){b.addEventListener('click',function(){document.querySelector('.sheet').scrollIntoView({behavior:'smooth',block:'center'});play()})});
+  if(location.hash==='#nested'&&fit){fit.classList.add('nested')}else{play()}
+})();</script></body></html>
